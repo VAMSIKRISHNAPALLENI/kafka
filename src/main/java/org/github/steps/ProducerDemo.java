@@ -19,7 +19,6 @@ public class ProducerDemo {
 
         //Create Producer
         KafkaProducer<String,String> producer = new KafkaProducer<String,String>(properties);
-
         //Producer record
         ProducerRecord<String,String> record= new ProducerRecord<String, String>("first_topic","Hello My name is vamsi");
         //send Data
