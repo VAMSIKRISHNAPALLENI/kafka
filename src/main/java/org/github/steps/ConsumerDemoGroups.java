@@ -4,7 +4,6 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.errors.KafkaStorageException;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,15 +12,15 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class ConsumerDemo {
+public class ConsumerDemoGroups {
     public static void main(String[] args){
 /*
-* Just see how consumer works
+* Try to create more instances of consumer and see the rebalancing and Producer with same key is handovered to respective partition
 * */
         String bootstrap="127.0.0.1:9092";
-        String groupID="my-first-application";
+        String groupID="my-fifth-application";
         String topics="the_originals";
-        Logger logger= LoggerFactory.getLogger(ConsumerDemo.class.getName());
+        Logger logger= LoggerFactory.getLogger(ConsumerDemoGroups.class.getName());
         //Consumer Config
         Properties properties= new Properties();
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,bootstrap);
